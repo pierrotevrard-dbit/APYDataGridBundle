@@ -2150,7 +2150,7 @@ class Grid implements GridInterface
                 return $parameters;
             } else {
                 // @fix renderResponse() does not exist
-                $content = $this->container->get('twig')->renderView($view, $parameters);
+                $content = $this->container->get('twig')->render($view, $parameters);
 
                 if (null === $response) {
                     $response = new Response();
