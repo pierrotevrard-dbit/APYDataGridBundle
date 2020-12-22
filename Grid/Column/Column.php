@@ -103,7 +103,7 @@ abstract class Column
     protected $isSorted = false;
     protected $orderUrl;
     protected $authorizationChecker;
-    protected $data;
+    protected $data = [];
     protected $operatorsVisible;
     protected $operators;
     protected $defaultOperator;
@@ -528,12 +528,12 @@ abstract class Column
         $result = [];
 
         $hasValue = false;
-        if ($this->data['from'] != $this::DEFAULT_VALUE) {
+        if (isset($data['from']) && $this->data['from'] != $this::DEFAULT_VALUE) {
             $result['from'] = $this->data['from'];
             $hasValue = true;
         }
 
-        if ($this->data['to'] != $this::DEFAULT_VALUE) {
+        if (isset($data['to']) && $this->data['to'] != $this::DEFAULT_VALUE) {
             $result['to'] = $this->data['to'];
             $hasValue = true;
         }
