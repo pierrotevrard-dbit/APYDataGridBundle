@@ -76,7 +76,7 @@ class DefaultController extends Controller
 		$grid->setSource($source);
 
 		// Return the response of the grid to the template
-		return $grid->getGridResponse('MyProjectMyBundle::myGrid.html.twig');
+		return $grid->getGridResponse('@MyProjectMyBundle/myGrid.html.twig');
 	}
 }
 ```
